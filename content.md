@@ -35,7 +35,7 @@ Approve your weekly meal plan: Once per week, approve the meal plan generated fo
 
 Receive meals at convenient time: Best chefs in town will cook your selected meal every day, and we will deliver it to your door whenever works best for you. You can change delivery schedule and address daily!
 
-### Omnifood works with any diet
+###
 
 Vegetarian
 Vegan
@@ -119,10 +119,12 @@ Create account
 Sign in
 iOS app
 Android app
+
 About Omnifood
 For Business
 Cooking partners
 Careers
+
 Recipe directory
 Help center
 Privacy & terms
