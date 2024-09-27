@@ -1,15 +1,18 @@
 /* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
 
 /**************************/
-/* BELOW 1344px (Smaller Desktops) */
+/* BELOW 1344px (Smaller desktops) */
 /**************************/
+
 @media (max-width: 84em) {
   .hero {
     max-width: 120rem;
   }
+
   .heading-primary {
     font-size: 4.4rem;
   }
+
   .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -21,7 +24,7 @@
 
 @media (max-width: 75em) {
   html {
-    /* 9 / 16 */
+    /* 9px / 16px  */
     font-size: 56.25%;
   }
 
@@ -60,8 +63,8 @@
 /**************************/
 
 @media (max-width: 59em) {
-  /* 8 / 16 */
   html {
+    /* 8px / 16px = 0.5 = 50% */
     font-size: 50%;
   }
 
@@ -71,8 +74,8 @@
     gap: 6.4rem;
   }
 
-  .hero-img-box,
-  .hero-text-box {
+  .hero-text-box,
+  .hero-img-box {
     text-align: center;
   }
 
@@ -106,6 +109,7 @@
   }
 
   .cta {
+    /* 3/5 = 60% + 2/5 = 40% */
     grid-template-columns: 3fr 2fr;
   }
 
@@ -116,69 +120,68 @@
   .btn--form {
     margin-top: 1.2rem;
   }
-}
 
-/* MOBILE NAVIGATION */
+  /* MOBILE NAVIGATION */
+  .btn-mobile-nav {
+    display: block;
+  }
 
-.btn-mobile-nav {
-  display: block;
-}
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.97);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
 
-.main-nav {
-  background-color: rgba(255, 255, 255, 0.97);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  transform: translateX(100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.5s ease-in;
+    /* Hide navigation */
+    /* Allows NO transitions at all */
+    /* display: none; */
 
-  /* Hide navigation */
-  /* Allows NO transitions at all */
-  /* display: none; */
+    /* 1) Hide it visually */
+    opacity: 0;
 
-  /* 1) Hide it visually */
-  opacity: 0;
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
 
-  /* 2) Make it unaccesible to mouse and keyboard */
-  pointer-events: none;
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
 
-  /* 3) Hide it from screen readers */
-  visibility: hidden;
-}
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
 
-.nav-open .main-nav {
-  opacity: 1;
-  pointer-events: auto;
-  visibility: visible;
-  transform: translateX(0);
-}
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
 
-.main-nav-list {
-  flex-direction: column;
-  gap: 4.8rem;
-}
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
 
-.nav-open .icon-mobile-nav[name="close-outline"] {
-  display: block;
-}
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
 
-.nav-open .icon-mobile-nav[name="menu-outline"] {
-  display: none;
-}
-
-.main-nav-link:link,
-.main-nav-link:visited {
-  font-size: 3rem;
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
 }
 
 /**************************/
-/* BELOW 704px (Smaller Tablets) */
+/* BELOW 704px (Smaller tablets) */
 /**************************/
 
 @media (max-width: 44em) {
@@ -217,7 +220,7 @@
 }
 
 /**************************/
-/* BELOW 544px (Phoness) */
+/* BELOW 544px (Phones) */
 /**************************/
 
 @media (max-width: 34em) {
@@ -287,9 +290,11 @@
     grid-row: 1;
   }
 }
-/* - Font sizes (px)
-  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 
-  
-  - Spacing system (px)
-  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-  */
+
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
